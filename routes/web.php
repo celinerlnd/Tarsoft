@@ -16,5 +16,9 @@ use App\Http\Controllers\ProjectController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/try', function(){
+    $user = \App\Models\User::all();
+    return view ('try.index', compact('user'));
+});
 
 Route::resource('projects', ProjectController::class);
