@@ -35,8 +35,8 @@ Route::get('/posts', function() {
     //     'user_id' => 2,
     //     'title' => 'post title'
     // ]);
-    $posts = \App\Models\Post::get();
-    return view ('posts.index', compact('posts'));
+    // $posts = \App\Models\Post::get();
+    // return view ('posts.index', compact('posts'));
 });
 
 Route::resource('projects', ProjectController::class);
