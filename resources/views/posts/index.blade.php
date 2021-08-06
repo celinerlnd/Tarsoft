@@ -6,12 +6,10 @@
     <div class ="row-justify-content-center">
         <div class ="col-md-8">
             <div class ="card">
-            @foreach ($user as $user)
-            <h2> {{ $user -> name}} </h2>
-            @foreach ($user -> addresses as $address)
-            <p> {{$address->country}}</p>
-            @endforeach
-            @endforeach
+                @foreach ($posts as $post)
+                <h1>{{$post -> title}} </h1>
+                <p> {{$post ->user ->name}}
+                @endforeach 
             </div>
         </div>
     </div>

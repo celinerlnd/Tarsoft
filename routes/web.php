@@ -18,7 +18,24 @@ Route::get('/', function () {
 });
 Route::get('/try', function(){
     $user = \App\Models\User::with('addresses')-> get();
+   // $user[0] -> addresses()->create([
+    //    'country' => 'Nepal'
+    //]);
+    //dd($user[0]);
     return view ('try.index', compact('user'));
+});
+
+Route::get('/posts', function() {
+    // \App\Models\Post::create([
+    //     'user_id' => 1,
+    //     'title' => 'post title'
+    // ]);
+    // \App\Models\Post::create([
+    //     'user_id' => 2,
+    //     'title' => 'post title'
+    // ]);
+    $posts = \App\Models\Post::get();
+    return view ('posts.index', compact('posts'));
 });
 
 Route::resource('projects', ProjectController::class);
