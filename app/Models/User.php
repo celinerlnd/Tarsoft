@@ -42,6 +42,10 @@ class User extends Authenticatable
     ];
 
     public function address(){
-        return $this -> hasOne(Address::Class);
+        return $this -> hasOne(Address::Class, 'user_id', 'id');
+    }
+
+    public function addresses(){
+        return $this -> hasMany(Address::class);
     }
 }

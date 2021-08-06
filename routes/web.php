@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/try', function(){
-    $user = \App\Models\User::all();
+    $user = \App\Models\User::with('addresses')-> get();
     return view ('try.index', compact('user'));
 });
 
