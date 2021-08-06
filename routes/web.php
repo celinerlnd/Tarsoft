@@ -17,14 +17,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/try', function(){
-    $user = \App\Models\User::with('addresses')-> get();
+    $user = \App\Models\User::get();
+    //$user = \App\Models\User::has('posts')-> with('post')->get();
+   // $user = \App\Models\User::with('addresses')-> get();
    // $user[0] -> addresses()->create([
     //    'country' => 'Nepal'
     //]);
     //dd($user[0]);
     return view ('try.index', compact('user'));
 });
-
 Route::get('/posts', function() {
     // \App\Models\Post::create([
     //     'user_id' => 1,

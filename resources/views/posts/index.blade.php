@@ -8,7 +8,7 @@
             <div class ="card">
                 @foreach ($posts as $post)
                 <h1>{{$post -> title}} </h1>
-                <p> {{$post ->user ->name}}
+                <p> {{$post ->user ->name}}</p>
                 @endforeach 
             </div>
         </div>
