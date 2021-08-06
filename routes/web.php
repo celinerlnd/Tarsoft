@@ -27,6 +27,13 @@ Route::get('/try', function(){
     return view ('try.index', compact('user'));
 });
 Route::get('/posts', function() {
+    //$tag = \App\Models\Tag::first();
+    // $post =\App\Models\Post::with('tags')->first();
+    // $post -> tags() ->attach([2,3,4]);
+    // dd($post);
+    //$post->tags()->attach($tag->id);
+    $posts = \App\Models\Post::with(['user', 'tags'])->get();
+    return view ('posts.index',compact ('posts'));
     // \App\Models\Post::create([
     //     'user_id' => 1,
     //     'title' => 'post title'
